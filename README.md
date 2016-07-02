@@ -1,9 +1,9 @@
 きりたんのアクションゲーム(仮)
 ====
-note: This is fan game of [Tohoku Zunko](http://zunko.jp/guideline.html) powered by Unity. Work in progress. This document is written in Japanese. If you needed English information, please contact to [Hassaku](https://github.com/hassakuTb) directly.
+note: This is fan game of [Tohoku Zunko](http://zunko.jp/) powered by Unity. Work in progress. This document is written in Japanese. If you needed English information, please contact to [Hassaku](https://github.com/hassakuTb) directly.
 
 ## Overview
-[東北ずん子](http://zunko.jp/guideline.html)の二次創作ゲームです。Unityで動きます。
+[東北ずん子](http://zunko.jp/)の二次創作ゲームです。Unityで動きます。
 製作中であり完成品ではありません。
 東北きりたんを操作するステージクリア型のサイドビュー2Dアクションゲームを想定しています。
 
@@ -27,9 +27,9 @@ Unityを起動し、File → Open Projectでルートディレクトリを指定
 * よくわからない場合は直接連絡してください。
 
 ## License
-* ソースコード(*.cs)は[MITライセンス](https://github.com/HassakuTb/KiritanAction/Licenses/MIT.txt)です。
-* Noto Sans CJK JP Regularフォントファイル(/Assets/Fonts/NotoSansCJKjp-Regular_16.otf)は[SIL OPEN FONT LICENSE Version 1.1](https://github.com/HassakuTb/KiritanAction/Licenses/SIL_Open_Font_License_1.1.txt)です。
-* JFドットM+H10フォントファイル(/Assets/Fonts/JF-Dot-MPlusH10B.ttf)は[M+フォントライセンス](https://github.com/HassakuTb/KiritanAction/Licenses/MPlus_Font_License.txt)です。
+* ソースコード(*.cs)は[MITライセンス](https://github.com/HassakuTb/KiritanAction/blob/master/Licenses/MIT.txt)です。
+* Noto Sans CJK JP Regularフォントファイル(/Assets/Fonts/NotoSansCJKjp-Regular_16.otf)は[SIL OPEN FONT LICENSE Version 1.1](https://github.com/HassakuTb/KiritanAction/blob/master/Licenses/SIL_Open_Font_License_1.1.txt)です。
+* JFドットM+H10フォントファイル(/Assets/Fonts/JF-Dot-MPlusH10B.ttf)は[M+フォントライセンス](https://github.com/HassakuTb/KiritanAction/blob/master/Licenses/MPlus_Font_License.txt)です。
 * /Assets/Sprites/Zunkyo以下の画像ファイルは[東北ずん子ガイドライン](http://zunko.jp/guideline.html)準拠です。
 * 以上を除くアセットファイルは[CC-by 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)です。
-* gh-pageブランチにビルドされた成果物は再頒布が禁止です。(複製物または二次的著作物を含む)
+* gh-pagesブランチにビルドされた成果物は再頒布が禁止です。(複製物または二次的著作物を含む)
