@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: 2ead5be27e6d52246bed59c227fe4563
+timeCreated: 1466104549
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: KiritanBase_0
+    21300002: KiritanBase_1
+    21300004: KiritanBase_2
+    21300006: KiritanBase_3
+    21300008: KiritanBase_4
+    21300010: KiritanBase_5
+    21300012: KiritanBase_6
+    21300014: KiritanBase_7
+    21300016: KiritanBase_8
+    21300018: KiritanBase_9
+    21300020: KiritanBase_10
+    21300022: KiritanBase_11
+    21300024: KiritanBase_12
+    21300026: KiritanBase_13
+    21300028: KiritanBase_14
+    21300030: KiritanBase_15
+    21300032: KiritanBase_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 256
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: KiritanBase_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 157
+        width: 75
+        height: 343
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.5, y: 218.25}
+        - {x: -12.5, y: 257.25}
+        - {x: -37.5, y: 257.25}
+        - {x: -37.5, y: -74.75}
+        - {x: -26.5, y: -85.75}
+        - {x: 35.5, y: -85.75}
+        - {x: 37.5, y: -79.75}
+        - {x: 37.5, y: 191.25}
+        - {x: 28.5, y: 207.25}
+    - name: KiritanBase_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 155
+        width: 75
+        height: 343
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 240.25}
+        - {x: -13.5, y: 257.25}
+        - {x: -37.5, y: 257.25}
+        - {x: -37.5, y: -73.75}
+        - {x: -29.5, y: -85.75}
+        - {x: 28.5, y: -85.75}
+        - {x: 37.5, y: -76.75}
+        - {x: 37.5, y: 192.25}
+        - {x: 23.5, y: 216.25}
+    - name: KiritanBase_2
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 457
+        width: 57
+        height: 30
+      alignment: 9
+      pivot: {x: 0.96276027, y: 0.32068074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: KiritanBase_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 318
+        width: 128
+        height: 131
+      alignment: 9
+      pivot: {x: 0.5564697, y: 0.06590562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.22812, y: 122.36636}
+        - {x: -71.22812, y: 101.36636}
+        - {x: -71.22812, y: -1.6336365}
+        - {x: -52.22812, y: -8.633636}
+        - {x: 56.77188, y: -8.633636}
+        - {x: 56.77188, y: 122.36636}
+    - name: KiritanBase_4
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 370
+        width: 23
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: KiritanBase_5
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 467
+        width: 33
+        height: 27
+      alignment: 9
+      pivot: {x: 0.018919975, y: 0.13346355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: KiritanBase_6
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 360
+        width: 75
+        height: 86
+      alignment: 9
+      pivot: {x: 0.05465739, y: 0.9794815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30.900696, y: 1.7645874}
+        - {x: -3.0993042, y: 1.7645874}
+        - {x: -4.099304, y: -2.2354126}
+        - {x: -4.099304, y: -84.23541}
+        - {x: 67.900696, y: -84.23541}
+        - {x: 70.900696, y: -81.23541}
+        - {x: 70.900696, y: -31.235413}
+        - {x: 67.900696, y: -17.235413}
+    - name: KiritanBase_7
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 265
+        width: 103
+        height: 73
+      alignment: 9
+      pivot: {x: 0.10283357, y: 0.8087158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.591858, y: 13.963745}
+        - {x: -10.591858, y: -37.036255}
+        - {x: 0.4081421, y: -59.036255}
+        - {x: 92.40814, y: -59.036255}
+        - {x: 92.40814, y: 13.963745}
+    - name: KiritanBase_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 162
+        width: 87
+        height: 125
+      alignment: 9
+      pivot: {x: 0.7148318, y: 0.4957279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.190369, y: 63.03401}
+        - {x: -24.190369, y: 63.03401}
+        - {x: -27.190369, y: 59.03401}
+        - {x: -33.19037, y: 40.03401}
+        - {x: -62.19037, y: -19.965988}
+        - {x: -62.19037, y: -44.96599}
+        - {x: -48.19037, y: -61.96599}
+        - {x: 23.809631, y: -61.96599}
+        - {x: 24.809631, y: -54.96599}
+        - {x: 24.809631, y: 40.03401}
+        - {x: 14.809631, y: 53.03401}
+    - name: KiritanBase_9
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 162
+        width: 47
+        height: 123
+      alignment: 9
+      pivot: {x: 0.74304587, y: 1.1360372}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.923157, y: -16.732574}
+        - {x: -32.923157, y: -20.732574}
+        - {x: -34.923157, y: -26.732574}
+        - {x: -34.923157, y: -109.732574}
+        - {x: -22.923157, y: -139.73257}
+        - {x: 12.076843, y: -139.73257}
+        - {x: 12.076843, y: -18.732574}
+        - {x: 11.076843, y: -16.732574}
+    - name: KiritanBase_10
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 173
+        width: 69
+        height: 123
+      alignment: 9
+      pivot: {x: 0.7050912, y: 0.8625193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.65129, y: 16.910126}
+        - {x: -48.65129, y: -101.089874}
+        - {x: -47.65129, y: -106.089874}
+        - {x: 11.348709, y: -106.089874}
+        - {x: 20.34871, y: -40.089874}
+        - {x: 20.34871, y: 16.910126}
+    - name: KiritanBase_11
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 40
+        width: 73
+        height: 119
+      alignment: 9
+      pivot: {x: 1.0258179, y: 1.0384896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.884705, y: -4.580261}
+        - {x: -74.884705, y: -77.58026}
+        - {x: -74.884705, y: -121.58026}
+        - {x: -66.884705, y: -123.58026}
+        - {x: -35.884705, y: -123.58026}
+        - {x: -1.8847046, y: -29.580261}
+        - {x: -1.8847046, y: -4.580261}
+    - name: KiritanBase_12
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 37
+        width: 87
+        height: 69
+      alignment: 9
+      pivot: {x: 0.6189473, y: 0.9568537}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.1515808, y: 2.9770966}
+        - {x: -18.84842, y: 2.9770966}
+        - {x: -53.84842, y: -30.022903}
+        - {x: -53.84842, y: -43.022903}
+        - {x: -31.84842, y: -63.022903}
+        - {x: -15.848419, y: -66.0229}
+        - {x: 27.15158, y: -66.0229}
+        - {x: 33.15158, y: -63.022903}
+        - {x: 33.15158, y: -42.022903}
+        - {x: 26.15158, y: -5.0229034}
+    - name: KiritanBase_13
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 82
+        width: 38
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 1.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: -5.800003}
+        - {x: -19, y: -10.800003}
+        - {x: -19, y: -60.800003}
+        - {x: -17, y: -63.800003}
+        - {x: 17, y: -63.800003}
+        - {x: 19, y: -62.800003}
+        - {x: 19, y: -5.800003}
+    - name: KiritanBase_14
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 85
+        width: 38
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5, y: 1.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: -5.899994}
+        - {x: -11, y: -8.899994}
+        - {x: -19, y: -9.899994}
+        - {x: -19, y: -60.899994}
+        - {x: -7, y: -64.899994}
+        - {x: 16, y: -64.899994}
+        - {x: 19, y: -57.899994}
+        - {x: 19, y: -5.899994}
+    - name: KiritanBase_15
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 12
+        width: 32
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.92}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 4.800003}
+        - {x: -16, y: -41.199997}
+        - {x: -8, y: -55.199997}
+        - {x: 16, y: -55.199997}
+        - {x: 16, y: -0.19999695}
+        - {x: 13, y: 4.800003}
+    - name: KiritanBase_16
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 12
+        width: 32
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.92}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 4.800003}
+        - {x: -16, y: -41.199997}
+        - {x: -8, y: -55.199997}
+        - {x: 16, y: -55.199997}
+        - {x: 16, y: -0.19999695}
+        - {x: 13, y: 4.800003}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
