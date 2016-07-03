@@ -21,6 +21,12 @@ namespace KiritanAction {
         /// </summary>
         public GameObject ExplodePrefab;
 
+        /// <summary>
+        /// 衝突対象
+        /// collider target layer mask
+        /// </summary>
+        public LayerMask TargetFilter;
+
         private Rigidbody2D rigidbodyCache { get; set; }
 
         protected void Awake() {
@@ -48,6 +54,8 @@ namespace KiritanAction {
         //  当たり判定があるものに接触時
         //  on collided
         protected void OnTriggerEnter2D(Collider2D other) {
+            if (((1 << other.gameObject.layer) & TargetFilter) == 0) return;
+
             rigidbodyCache.isKinematic = true;
 
             //  爆発を発生させる
@@ -65,6 +73,10 @@ namespace KiritanAction {
             GetComponent<Collider2D>().enabled = false;
 
             GameObject.Destroy(gameObject, DelayAfterHit);
+        }
+
+        public void DestroyMe() {
+            GameObject.Destroy(gameObject);
         }
     }
 }

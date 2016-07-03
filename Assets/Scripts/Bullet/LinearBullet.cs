@@ -27,6 +27,12 @@ namespace KiritanAction {
         /// </summary>
         public GameObject ExplodePrefab;
 
+        /// <summary>
+        /// 衝突対象
+        /// collider target layer mask
+        /// </summary>
+        public LayerMask TargetFilter;
+
         private bool isExploded { get; set; }
 
         private Rigidbody2D rigidbodyCache { get; set; }
@@ -66,6 +72,7 @@ namespace KiritanAction {
 
         //  on collided
         protected void OnTriggerEnter2D(Collider2D other) {
+            if (((1 << other.gameObject.layer) & TargetFilter) == 0) return;
             Explode();
         }
 

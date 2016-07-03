@@ -20,9 +20,9 @@ namespace KiritanAction.ConcleteItem {
         }
 
         protected override void Affect() {
-            kiritan.Voice("Kiritanpo");
+            Kiritan.Voice("Kiritanpo");
 
-            kiritan.CannonLevelUp();
+            Kiritan.CannonLevelUp();
         }
     }
 }

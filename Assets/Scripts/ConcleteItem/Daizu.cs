@@ -16,7 +16,7 @@ namespace KiritanAction.ConcleteItem {
         private const float chargeValue = 5f;
 
         protected override void Affect() {
-            kiritan.Energy.Current += chargeValue;
+            Kiritan.Energy.Current += chargeValue;
         }
     }
 }
