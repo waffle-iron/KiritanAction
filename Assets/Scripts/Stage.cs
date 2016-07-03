@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using KiritanAction.Common;
 
 namespace KiritanAction {
 
@@ -6,16 +7,11 @@ namespace KiritanAction {
     /// ステージクラス
     /// Stage
     /// </summary>
-    [CreateAssetMenu(fileName="NewStage", menuName="ScriptableObject/Stage")]
-    public class Stage : ScriptableObject{
+    public class Stage : MonoBehaviour{
 
         //  ステージ名
         //  stage name
         public string StageName;
-
-        //  ステージのPrefab
-        //  Prefab of stage
-        public GameObject StagePrefab;
 
         //  ずんだもちの数
         //  zundamochi count obtained
@@ -33,11 +29,19 @@ namespace KiritanAction {
         //  record (obtained all zundamochies)
         public float ZundaRecord { get; set; }
 
-        //  初期化
-        //  initalize
-        protected void OnEnable() {
+        protected void Awake() {
             ZundaCount = 0;
             Time = 0;
+        }
+
+        //  manual initialization
+        public void Init(Kiritan kiritan) {
+            kiritan.ResponePosition = transform.FindChild("ResponePoint").transform.position.ToVector2();
+
+            var items = transform.FindChild("Items").GetComponentsInChildren<Item>();
+            foreach(var i in items) {
+                i.Kiritan = kiritan;
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace KiritanAction {
 
         //  きりたんへの参照
         //  Kiritan
-        protected Kiritan kiritan { get; set; }
+        public Kiritan Kiritan { protected get; set; }
 
         //  取得時のSE
         //  Sound at get goods
@@ -42,7 +42,6 @@ namespace KiritanAction {
         private SpriteRenderer spriteRenderer { get; set; }
 
         protected virtual void Awake() {
-            kiritan = GameObject.FindGameObjectWithTag("Kiritan").GetComponent<Kiritan>();
             soundEffect = GetComponent<AudioSource>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             circleCollider = GetComponent<CircleCollider2D>();

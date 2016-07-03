@@ -22,7 +22,7 @@ namespace KiritanAction.ConcleteItem {
         }
 
         protected override void Affect() {
-            kiritan.Voice("Zundamochi");
+            Kiritan.Voice("Zundamochi");
 
             ++ currentStage.ZundaCount;
 
