@@ -1,0 +1,7 @@
+# ignore all
+/*
+
+# allow ruild result
+!/Release/
+!/TemplateData/
+!/index.html
