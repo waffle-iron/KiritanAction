@@ -9,10 +9,10 @@ namespace KiritanAction {
 
     /// <summary>
     /// きりたんクラス
-    /// 生成のタイミングは Kiritan -> Stage
+    /// 生成のタイミングは Stage -> Kiritan
     /// 
     /// Kiritan
-    /// Create order is Kiritan -> Stage
+    /// Create order is Stage -> Kiritan
     /// </summary>
     [RequireComponent(typeof(BoxCollider2D))]
     [RequireComponent(typeof(Rigidbody2D))]
@@ -138,6 +138,11 @@ namespace KiritanAction {
         private GameObject OptionUnitObject { get; set; }
 
         /// <summary>
+        /// position to respone
+        /// </summary>
+        public Vector2 ResponePosition { private get; set; }
+
+        /// <summary>
         /// 反重力ジャンプをしたかどうかのフラグ(Animatorへの通知に利用する)
         /// is jumped with cannon? (using animation control)
         /// </summary>
@@ -211,6 +216,10 @@ namespace KiritanAction {
             //  set Kiritan state as normal
             TransitionState(KiritanStateEnum.Normal);
             CannonState = new CannonState(this, inputController);
+
+            //  ステージにきりたんの情報を伝える
+            //  send kititan info to stage
+            GameObject.FindGameObjectWithTag("Stage").GetComponent<Stage>().Init(this);
         }
 
 
@@ -348,6 +357,14 @@ namespace KiritanAction {
             get {
                 return judgeGround.IsGround;
             }
+        }
+
+        /// <summary>
+        /// きりたんの位置をリスポーンポイントに戻す
+        /// </summary>
+        public void SetPositionAsResponePosition() {
+            RigidbodyCache.MovePosition(ResponePosition);
+            RigidbodyCache.velocity = Vector2.zero;
         }
     }
 }
