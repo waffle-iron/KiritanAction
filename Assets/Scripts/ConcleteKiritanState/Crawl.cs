@@ -28,6 +28,9 @@ namespace KiritanAction.ConcleteKiritanState {
         private Vector2 normalBottomCircleColliderOffset { get; set; }
         private float normalBottomCircleColliderRadius { get; set; }
 
+        private Vector2 normalDamageColliderOffset { get; set; }
+        private Vector2 normalDamageColliderSize { get; set; }
+
         //  Crawl状態のColliderパラメータ
         //  collider parameters for crawl state
         private static readonly Vector2 crawlBoxColliderOffset = new Vector2(0f, 0.45f);
@@ -37,11 +40,16 @@ namespace KiritanAction.ConcleteKiritanState {
         private static readonly Vector2 crawlBottomCircleColliderOffset = new Vector2(0f, 0.36f);
         private static readonly float crawlBottomCircleColliderRadius = 0.38f;
 
+        private static readonly Vector2 crawlDamageColliderOffset = new Vector2(0f, 0.45f);
+        private static readonly Vector2 crawlDamageColliderSize = new Vector2(0.6f, 0.9f);
+
         //  きりたんのColliderへの参照キャッシュ
         //  cache of collider component
         private BoxCollider2D boxCollider { get; set; }
         private CircleCollider2D topCircleCollider { get; set; }
         private CircleCollider2D bottomCircleCollider { get; set; }
+
+        private BoxCollider2D damageCollider { get; set; }
 
         //  メインきりたん砲(アニメーションが適用されない複製)への参照
         //  cannon presenter object depend on Kiritan animation
@@ -71,7 +79,8 @@ namespace KiritanAction.ConcleteKiritanState {
 
             //  通常状態の当たり判定のパラメータを記録
             //  cache collider parameters for normal state
-            boxCollider = kiritan.transform.GetComponent<BoxCollider2D>();
+            var boxColliders = kiritan.transform.GetComponents<BoxCollider2D>();
+            boxCollider = boxColliders[0];
             normalBoxColliderOffset = boxCollider.offset;
             normalBoxColliderSize = boxCollider.size;
             CircleCollider2D[] circleColliders = kiritan.transform.GetComponents<CircleCollider2D>();
@@ -81,6 +90,9 @@ namespace KiritanAction.ConcleteKiritanState {
             bottomCircleCollider = circleColliders[1];
             normalBottomCircleColliderOffset = circleColliders[1].offset;
             normalBottomCircleColliderRadius = circleColliders[1].radius;
+            damageCollider = boxColliders[1];
+            normalDamageColliderOffset = damageCollider.offset;
+            normalDamageColliderSize = damageCollider.size;
 
             //  メインきりたん砲への参照を取得
             //  get reference of cannon presenter
@@ -109,6 +121,8 @@ namespace KiritanAction.ConcleteKiritanState {
             topCircleCollider.radius = crawlTopCircleColliderRadius;
             bottomCircleCollider.offset = crawlBottomCircleColliderOffset;
             bottomCircleCollider.radius = crawlBottomCircleColliderRadius;
+            damageCollider.offset = crawlDamageColliderOffset;
+            damageCollider.size = crawlDamageColliderSize;
 
             //  きりたん砲の表示をアニメーションしないように切り替える
             //  switch cannon presenter
@@ -135,6 +149,8 @@ namespace KiritanAction.ConcleteKiritanState {
             topCircleCollider.radius = normalTopCircleColliderRadius;
             bottomCircleCollider.offset = normalBottomCircleColliderOffset;
             bottomCircleCollider.radius = normalBottomCircleColliderRadius;
+            damageCollider.offset = normalDamageColliderOffset;
+            damageCollider.size = normalDamageColliderSize;
 
             cannonChargeParticle.Stop();
             cannonChargeParticle.Clear();
