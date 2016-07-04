@@ -18,6 +18,7 @@ namespace KiritanAction {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(JudgeGround))]
+    [RequireComponent(typeof(Life))]
     public class Kiritan : MonoBehaviour {
 
         //  きりたん砲レベル定義インスタンスへの参照
@@ -34,6 +35,16 @@ namespace KiritanAction {
 
         //  Particle emitter when the level is raised
         public GameObject LevelUpParticlePrefab;
+
+        /// <summary>
+        /// knockback direction angle when damaged (degree)
+        /// </summary>
+        public float KnockbackAngle;
+
+        /// <summary>
+        /// knockback velocity magnitude when damaged
+        /// </summary>
+        public float KnockbackPower;
 
         //  入力情報への参照
         //  input controller
@@ -137,6 +148,9 @@ namespace KiritanAction {
         //  gameobject for present option unit(Lv.5)
         private GameObject OptionUnitObject { get; set; }
 
+        //  life
+        private Life life { get; set; }
+
         /// <summary>
         /// position to respone
         /// </summary>
@@ -168,6 +182,9 @@ namespace KiritanAction {
             //  instantiate energy
             Energy = ScriptableObject.CreateInstance<Energy>();
 
+            //  get life component
+            life = GetComponent<Life>();
+
             Direction = ActorDirection.Right;
 
             //  UIからきりたんへの参照を有効にする
@@ -176,6 +193,7 @@ namespace KiritanAction {
             GameObject.FindGameObjectWithTag("AntiGravityGauge").GetComponent<UI.AntiGravityGauge>().Kiritan = this;
             GameObject.FindGameObjectWithTag("StancePowerGauge").GetComponent<UI.StancePowerGauge>().Kiritan = this;
             GameObject.FindGameObjectWithTag("CrawlPowerGauge").GetComponent<UI.CrawlPowerGauge>().Kiritan = this;
+            GameObject.FindGameObjectWithTag("MotivationGauge").GetComponent<UI.LifeGauge>().Life = life;
 
             //  resolve cannon level UI
             CannonLevel = 0;
@@ -365,6 +383,24 @@ namespace KiritanAction {
         public void SetPositionAsResponePosition() {
             RigidbodyCache.MovePosition(ResponePosition);
             RigidbodyCache.velocity = Vector2.zero;
+        }
+
+        /// <summary>
+        /// receive damage
+        /// </summary>
+        /// <param name="atk">attack collider object</param>
+        public void Damage(Attack atk) {
+            TransitionState(KiritanStateEnum.Damage);
+            life.Damage(atk.Damage);
+            PlaySE("Damage");
+            Voice("Ah");
+
+            //  calc knockback velocity
+            var knockbackVelocity = new Vector2(
+                x: Mathf.Sin(KnockbackAngle * Mathf.Deg2Rad) * KnockbackPower * (-Direction.ToFloat()),
+                y: Mathf.Cos(KnockbackPower * Mathf.Deg2Rad) * KnockbackPower
+                );
+            RigidbodyCache.velocity = knockbackVelocity;
         }
     }
 }

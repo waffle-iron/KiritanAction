@@ -27,6 +27,12 @@ namespace KiritanAction {
         /// </summary>
         public int AttackLevel;
 
+        /// <summary>
+        /// 一度衝突した後に衝突しなくなるか(true のとき1度のみ)
+        /// if true, collided object is never collide.
+        /// </summary>
+        public bool AttackOnce;
+
         //  一度衝突した対象の履歴
         //  List of collided object
         private List<AttackReceiver> collidedObjects { get; set; }
@@ -46,8 +52,9 @@ namespace KiritanAction {
             //  fire receiver event if collided object have AttackReceiver component
             AttackReceiver receiver = other.GetComponent<AttackReceiver>();
             if (receiver == null) return;
+            if (!receiver.colliders.Contains(other)) return;
             if (!collidedObjects.Contains(receiver)) {  //  衝突履歴に含まれていない場合のみ処理する
-                collidedObjects.Add(receiver);
+                if(AttackOnce) collidedObjects.Add(receiver);
                 receiver.OnAttackReceived(this);
             }
         }

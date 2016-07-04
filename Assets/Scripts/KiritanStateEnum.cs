@@ -12,5 +12,6 @@ namespace KiritanAction {
         Normal,
         Stance,
         Crawl,
+        Damage,
     }
 }
