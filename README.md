@@ -1,15 +1,26 @@
 きりたんのアクションゲーム(仮)
 ====
+<img src="https://github.com/HassakuTb/KiritanAction/blob/gh-resources/zzm_kiritan_fly2.png" alt="きりたん" title="きりたん" width="320px" align="left">  
+
 note: This is fan game of [Tohoku Zunko](http://zunko.jp/) powered by Unity. Work in progress. This document is written in Japanese. If you needed English information, please contact to [Hassaku](https://github.com/hassakuTb) directly.
 
 ## Overview
 [東北ずん子](http://zunko.jp/)の二次創作ゲームです。Unityで動きます。
 製作中であり完成品ではありません。
 東北きりたんを操作するステージクリア型のサイドビュー2Dアクションゲームを想定しています。
+<BR clear="left">
+***
+
 
 ## Play
 [http://HassakuTb.github.io/KiritanAction/](http://HassakuTb.github.io/KiritanAction/)
-に不定期にWebGLでビルドします。
+不定期にWebGLでビルドします。
+
+### 操作方法
+* ←→ 歩く
+* ↓ 構える
+* z ジャンプ
+* x 砲撃
 
 ## Requirement
 * Unity3D Version 5.3.5f1 Personal (他環境での動作は確認していません)
