@@ -16,11 +16,7 @@ namespace KiritanAction {
         //  frame count 
         private int invincibleFrame { get; set; }
 
-        public List<CircleCollider2D> CircleColliders;
-        public List<PolygonCollider2D> PolygonColliders;
-        public List<BoxCollider2D> BoxColliders;
-
-        public List<Collider2D> colliders { get; private set; }
+        public List<Collider2D> colliders;
 
         /// <summary>
         /// get object is invincible or not
@@ -43,11 +39,6 @@ namespace KiritanAction {
 
         protected void Awake() {
             invincibleFrame = 0;
-            colliders = CircleColliders
-                .Cast<Collider2D>()
-                .Concat(PolygonColliders.Cast<Collider2D>())
-                .Concat(BoxColliders.Cast<Collider2D>())
-                .ToList();
         }
 
         protected void FixedUpdate() {
