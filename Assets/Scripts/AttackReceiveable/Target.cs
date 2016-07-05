@@ -20,9 +20,18 @@ namespace KiritanAction.AttackReceiveable {
         private AudioSource audioSource { get; set; }
         private SpriteRenderer spriteRenderer { get; set; }
 
+        private bool readyDestroy { get; set; }
+
         protected void Awake() {
             audioSource = GetComponent<AudioSource>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+            readyDestroy = false;
+        }
+
+        protected void Update() {
+            if (readyDestroy && !audioSource.isPlaying) {
+                GameObject.Destroy(gameObject);
+            }
         }
 
         /// <summary>
@@ -41,10 +50,11 @@ namespace KiritanAction.AttackReceiveable {
             audioSource.Play();
 
             ParticleSystem particle = GameObject.Instantiate<GameObject>(breakParticlePrefab).GetComponent<ParticleSystem>();
+            particle.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
             particle.transform.position = transform.position;
             particle.Play();
 
-            GameObject.Destroy(gameObject, audioSource.clip != null ? audioSource.clip.length : 0.5f);
+            readyDestroy = true;
         }
     }
 }

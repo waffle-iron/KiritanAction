@@ -27,10 +27,24 @@ namespace KiritanAction {
         /// </summary>
         public LayerMask TargetFilter;
 
+        private bool isHitted { get; set; }
+        private float timeAfterHit { get; set; }
+
         private Rigidbody2D rigidbodyCache { get; set; }
 
         protected void Awake() {
             rigidbodyCache = GetComponent<Rigidbody2D>();
+            timeAfterHit = 0f;
+            isHitted = false;
+        }
+
+        protected void FixedUpdate() {
+            if (isHitted) {
+                timeAfterHit += Time.deltaTime;
+                if (timeAfterHit >= DelayAfterHit) {
+                    GameObject.Destroy(gameObject);
+                }
+            }
         }
 
         /// <summary>
@@ -60,11 +74,14 @@ namespace KiritanAction {
 
             //  爆発を発生させる
             //  emit explosion
-            GameObject.Instantiate<GameObject>(ExplodePrefab).GetComponent<Explode>().Emit(transform.position);
+            Explode explode = GameObject.Instantiate<GameObject>(ExplodePrefab).GetComponent<Explode>();
+            explode.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
+            explode.Emit(transform.position);
 
             //  パーティクルを発生させる
             //  emit explosion particles
             ParticleSystem particle = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Particles/Explode1")).GetComponent<ParticleSystem>();
+            particle.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
             particle.transform.position = transform.position;
             particle.Play();
 
@@ -72,11 +89,7 @@ namespace KiritanAction {
             //  remove my collider
             GetComponent<Collider2D>().enabled = false;
 
-            GameObject.Destroy(gameObject, DelayAfterHit);
-        }
-
-        public void DestroyMe() {
-            GameObject.Destroy(gameObject);
+            isHitted = true;
         }
     }
 }

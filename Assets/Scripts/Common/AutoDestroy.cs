@@ -13,8 +13,17 @@ namespace KiritanAction.Common {
         /// </summary>
         public float Duration;
 
+        private float time { get; set; }
+
         protected void Awake() {
-            GameObject.Destroy(gameObject, Duration);
+            time = 0f;
+        }
+
+        protected void FixedUpdate() {
+            time += Time.deltaTime;
+            if (time >= Duration) {
+                GameObject.Destroy(gameObject);
+            }
         }
     }
 }

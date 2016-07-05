@@ -155,7 +155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &118006
 GameObject:
   m_ObjectHideFlags: 1
@@ -1154,9 +1154,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181782}
   m_LocalRotation: {x: 0, y: 0, z: 0.017452408, w: 0.9998477}
-  m_LocalPosition: {x: 0.005, y: 0.473, z: -1}
+  m_LocalPosition: {x: 0.014, y: 0.467, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2}
   m_Children:
   - {fileID: 489478}
   m_Father: {fileID: 491194}
@@ -2475,7 +2475,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnDead:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11463216}
+        m_MethodName: OnDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   Max: 50
@@ -2530,10 +2541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blinkerImage: {fileID: 11440200}
-  CircleColliders: []
-  PolygonColliders: []
-  BoxColliders:
-  - {fileID: 6125336}
+  colliders: []
 --- !u!114 &11458798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2590,9 +2598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906783ceb0b35fa49abdfd1f7718b479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CircleColliders: []
-  PolygonColliders: []
-  BoxColliders:
+  colliders:
   - {fileID: 6125336}
   OnReceivedMethod:
     m_PersistentCalls:

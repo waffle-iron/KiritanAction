@@ -345,6 +345,7 @@ namespace KiritanAction {
 
             //  emit particle
             ParticleSystem particle = GameObject.Instantiate<GameObject>(LevelUpParticlePrefab).GetComponent<ParticleSystem>();
+            particle.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
             particle.transform.position = transform.position;
             particle.Play();
 

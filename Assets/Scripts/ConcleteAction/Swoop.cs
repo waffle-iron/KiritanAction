@@ -62,6 +62,7 @@ namespace KiritanAction.ConcleteAction {
 
             //  攻撃判定の発生
             GameObject attack = GameObject.Instantiate<GameObject>(AttackPrefab);
+            attack.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
             attack.transform.position = attackEmitter.position;
 
             //  プレゼンターの再生
@@ -69,6 +70,7 @@ namespace KiritanAction.ConcleteAction {
 
             //  パーティクルを発生させる
             ParticleSystem cannonParticle = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Particles/CannonParticle1")).GetComponent<ParticleSystem>();
+            cannonParticle.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
             Presentation.CannonParticle1 cannonParticle1 = cannonParticle.transform.GetComponent<Presentation.CannonParticle1>();
             cannonParticle1.SetPosition(kiritan.MainCannonParticleEmitter.position);
             cannonParticle1.SetAngleZ(0f);

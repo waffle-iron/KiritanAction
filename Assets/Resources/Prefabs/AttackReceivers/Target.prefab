@@ -150,10 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906783ceb0b35fa49abdfd1f7718b479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CircleColliders:
+  colliders:
   - {fileID: 5800112}
-  PolygonColliders: []
-  BoxColliders: []
   OnReceivedMethod:
     m_PersistentCalls:
       m_Calls:
