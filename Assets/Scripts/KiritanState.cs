@@ -68,6 +68,12 @@ namespace KiritanAction {
         }
 
         protected void HandleActions() {
+            //SelfKillingボタンで強制的にOnDeadへ移行
+            if (Input.GetButtonDown("SelfKilling")) {
+                kiritan.OnDead();
+                return;
+            }
+
             foreach (Action act in Actions) {
                 if (act.Trigger()) act.OnTrigger();
             }
