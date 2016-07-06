@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using KiritanAction.Sound;
 using System.Collections.Generic;
 using System.Linq;
@@ -408,11 +407,10 @@ namespace KiritanAction {
         /// 死亡時の処理
         /// </summary>
         public void OnDead() {
+            TransitionState(KiritanStateEnum.Dead);
             if (0 < life.Current) {
                 life.Current = 0;
             }
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);   
         }
     }
 }
