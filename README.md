@@ -1,5 +1,7 @@
 きりたんのアクションゲーム(仮)
 ====
+
+[![Join the chat at https://gitter.im/HassakuTb/KiritanAction](https://badges.gitter.im/HassakuTb/KiritanAction.svg)](https://gitter.im/HassakuTb/KiritanAction?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <img src="https://github.com/HassakuTb/KiritanAction/blob/gh-resources/zzm_kiritan_fly2.png" alt="きりたん" title="きりたん" width="320px" align="right">  
 
 note: This is fan game of [Tohoku Zunko](http://zunko.jp/) powered by Unity. Work in progress. This document is written in Japanese. If you needed English information, please contact to [Hassaku](https://github.com/hassakuTb) directly.
