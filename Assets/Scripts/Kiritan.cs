@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using KiritanAction.Sound;
 using System.Collections.Generic;
 using System.Linq;
@@ -401,6 +402,17 @@ namespace KiritanAction {
                 y: Mathf.Cos(KnockbackPower * Mathf.Deg2Rad) * KnockbackPower
                 );
             RigidbodyCache.velocity = knockbackVelocity;
+        }
+
+        /// <summary>
+        /// 死亡時の処理
+        /// </summary>
+        public void OnDead() {
+            if (0 < life.Current) {
+                life.Current = 0;
+            }
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);   
         }
     }
 }
