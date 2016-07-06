@@ -402,5 +402,15 @@ namespace KiritanAction {
                 );
             RigidbodyCache.velocity = knockbackVelocity;
         }
+
+        /// <summary>
+        /// 死亡時の処理
+        /// </summary>
+        public void OnDead() {
+            TransitionState(KiritanStateEnum.Dead);
+            if (0 < life.Current) {
+                life.Current = 0;
+            }
+        }
     }
 }
