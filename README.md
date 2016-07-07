@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/HassakuTb/KiritanAction.png?label=ready&title=Ready)](https://waffle.io/HassakuTb/KiritanAction)
 きりたんのアクションゲーム(仮)
 ====
 
