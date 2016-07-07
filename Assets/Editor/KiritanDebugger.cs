@@ -20,6 +20,10 @@ namespace KiritanAction.Debugger{
                 EditorGUILayout.HelpBox("Scene is not in Stage.", MessageType.Info);
                 return;
             }
+            if (GameObject.FindGameObjectWithTag("Kiritan") == null) {
+                EditorGUILayout.HelpBox("Kiritan is not active.", MessageType.Info);
+                return;
+            }
 
             Life kiritanLife = GameObject.FindGameObjectWithTag("Kiritan").GetComponent<Life>();
             Kiritan kiritan = GameObject.FindGameObjectWithTag("Kiritan").GetComponent<Kiritan>();
