@@ -34,6 +34,7 @@ namespace KiritanAction {
         public LayerMask TargetFilter;
 
         private bool isExploded { get; set; }
+        private float timeAfterExplode { get; set; }
 
         private Rigidbody2D rigidbodyCache { get; set; }
 
@@ -43,6 +44,7 @@ namespace KiritanAction {
             rigidbodyCache = GetComponent<Rigidbody2D>();
             time = 0f;
             isExploded = false;
+            timeAfterExplode = 0f;
         }
 
         /// <summary>
@@ -64,9 +66,17 @@ namespace KiritanAction {
         }
 
         protected void FixedUpdate() {
-            time += Time.deltaTime;
-            if (time >= Duration) {
-                Explode();
+            if (!isExploded) {
+                time += Time.deltaTime;
+                if (time >= Duration) {
+                    Explode();
+                }
+            }
+            else {
+                timeAfterExplode += Time.deltaTime;
+                if (timeAfterExplode >= DelayAfterHit) {
+                    GameObject.Destroy(gameObject);
+                }
             }
         }
 
@@ -84,19 +94,20 @@ namespace KiritanAction {
 
             //  爆発を発生させる
             //  emit explosion
-            GameObject.Instantiate<GameObject>(ExplodePrefab).GetComponent<Explode>().Emit(transform.position);
+            Explode explode = GameObject.Instantiate<GameObject>(ExplodePrefab).GetComponent<Explode>();
+            explode.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
+            explode.Emit(transform.position);
 
             //  パーティクルを発生させる
             //  emit explosion particles
             ParticleSystem particle = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Particles/Explode1")).GetComponent<ParticleSystem>();
+            particle.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
             particle.transform.position = transform.position;
             particle.Play();
 
             //  当たり判定を消失させる
             //  remove my collider
             GetComponent<Collider2D>().enabled = false;
-
-            GameObject.Destroy(gameObject, DelayAfterHit);
 
             isExploded = true;
         }

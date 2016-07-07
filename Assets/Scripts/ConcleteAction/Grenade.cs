@@ -78,6 +78,7 @@ namespace KiritanAction.ConcleteAction {
             //  弾を生成
             //  blust off
             GameObject bullet = GameObject.Instantiate<GameObject>(BulletPrefab);
+            bullet.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
             Vector2 velocity = new Vector2(
                 x: ((MaxPower - MinPower) * ratio + MinPower) * Mathf.Sin(Angle * Mathf.Deg2Rad) * kiritan.Direction.ToFloat(),
                 y: ((MaxPower - MinPower) * ratio + MinPower) * Mathf.Cos(Angle * Mathf.Deg2Rad));
@@ -86,6 +87,7 @@ namespace KiritanAction.ConcleteAction {
             //  パーティクルの発生
             //  emit particle
             ParticleSystem cannonParticle = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Particles/CannonParticle1")).GetComponent<ParticleSystem>();
+            cannonParticle.transform.SetParent(GameObject.FindGameObjectWithTag("InstantObjectContainer").transform);
             Presentation.CannonParticle1 cannonParticle1 = cannonParticle.transform.GetComponent<Presentation.CannonParticle1>();
             cannonParticle1.SetPosition(kiritan.MainCannonParticleEmitter.position);
             cannonParticle1.SetAngleZ(- 30f * kiritan.Direction.ToFloat());

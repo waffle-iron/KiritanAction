@@ -33,6 +33,7 @@ namespace KiritanAction {
             InputButtonTable.Add("Jump", new InputButton());
             InputButtonTable.Add("Fire", new InputButton());
             InputButtonTable.Add("SelfKilling", new InputButton());
+            InputButtonTable.Add("Pause", new InputButton());
 
             throughUpdate = false;
         }
@@ -65,6 +66,10 @@ namespace KiritanAction {
 
             if (Input.GetButtonDown("SelfKilling")) {
                 InputButtonTable["SelfKilling"]._tmpPressed = true;
+            }
+
+            if (Input.GetButtonDown("Pause")) {
+                InputButtonTable["Pause"]._tmpPressed = true;
             }
         }
 

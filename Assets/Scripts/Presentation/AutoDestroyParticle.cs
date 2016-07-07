@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 namespace KiritanAction.Presentation {
     /// <summary>
@@ -14,8 +15,10 @@ namespace KiritanAction.Presentation {
             particle = GetComponent<ParticleSystem>();
         }
 
-        public void Start() {
-            GameObject.Destroy(gameObject, particle.duration);
+        protected void Update() {
+            if (!particle.isPlaying) {
+                GameObject.Destroy(gameObject);
+            }
         }
     }
 }

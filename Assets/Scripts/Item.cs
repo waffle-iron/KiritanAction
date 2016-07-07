@@ -41,11 +41,14 @@ namespace KiritanAction {
         //  sprite
         private SpriteRenderer spriteRenderer { get; set; }
 
+        private bool readyDestroy { get; set; }
+
         protected virtual void Awake() {
             soundEffect = GetComponent<AudioSource>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             circleCollider = GetComponent<CircleCollider2D>();
             particleObj = transform.FindChild("Particle").gameObject;
+            readyDestroy = false;
         }
 
         //  接触時
@@ -56,7 +59,15 @@ namespace KiritanAction {
             spriteRenderer.enabled = false;
             circleCollider.enabled = false;
             particleObj.SetActive(false);
-            GameObject.Destroy(gameObject, soundEffect.clip != null ? soundEffect.clip.length : 0f);
+            readyDestroy = true;
+        }
+
+        protected void FixedUpdate() {
+            if (readyDestroy) {
+                if (!soundEffect.isPlaying) {
+                    GameObject.Destroy(gameObject);
+                }
+            }
         }
     }
 }

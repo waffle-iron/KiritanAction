@@ -12,8 +12,19 @@ namespace KiritanAction {
 
         private AudioSource audioSource { get; set; }
 
+        private float frames { get; set; }
+
         protected void Awake() {
             audioSource = GetComponent<AudioSource>();
+            frames = 0;
+        }
+
+        protected void FixedUpdate() {
+            if (frames > 0 && !audioSource.isPlaying) {
+                GameObject.Destroy(gameObject);
+            }
+
+            frames++;
         }
 
         /// <summary>
@@ -26,8 +37,6 @@ namespace KiritanAction {
         /// </param>
         public void Emit(Vector3 position) {
             transform.position = position;
-
-            GameObject.Destroy(gameObject, audioSource.clip != null ? audioSource.clip.length : 1f);
         }
     }
 }

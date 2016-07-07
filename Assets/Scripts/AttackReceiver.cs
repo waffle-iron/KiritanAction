@@ -16,19 +16,7 @@ namespace KiritanAction {
     [RequireComponent(typeof(Rigidbody2D))]
     public class AttackReceiver : MonoBehaviour{
 
-        public List<CircleCollider2D> CircleColliders;
-        public List<PolygonCollider2D> PolygonColliders;
-        public List<BoxCollider2D> BoxColliders;
-
-        public List<Collider2D> colliders { get; private set; }
-
-        protected void Awake() {
-            colliders = CircleColliders
-                .Cast<Collider2D>()
-                .Concat(PolygonColliders.Cast<Collider2D>())
-                .Concat(BoxColliders.Cast<Collider2D>())
-                .ToList();
-        }
+        public List<Collider2D> colliders;
 
         /// <summary>
         /// methods invoke when damaged
