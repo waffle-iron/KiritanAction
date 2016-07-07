@@ -6,9 +6,15 @@ namespace KiritanAction.Debugger{
 
     public class KiritanDebugger : EditorWindow{
 
+        private int damageValue { get; set; }
+
         [MenuItem("KiritanAction/Open KiritanDebugger")]
         public static void OpenWindow() {
             GetWindow<KiritanDebugger>("Kiritan");
+        }
+
+        void OnEnable() {
+            damageValue = 0;
         }
 
         void OnGUI() {
@@ -37,7 +43,7 @@ namespace KiritanAction.Debugger{
             EditorGUILayout.LabelField("Send Damage");
             EditorGUILayout.BeginHorizontal();
 
-            int damageValue = EditorGUILayout.IntField("Value", 0);
+            damageValue = EditorGUILayout.IntField("Value", damageValue);
             if (GUILayout.Button("Send")) {
                 GameObject attacker = new GameObject();
                 attacker.AddComponent<CircleCollider2D>();
